@@ -1,0 +1,19 @@
+<h1>CAPSHER House Test</h1>
+<p>Welcome to the CAPSHER Technology podling house test!</p>
+<p>This test will sort you into one of the 4 houses of the pods.</p>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input name="name" [formControl]="name" matInput required>
+    @if (name.invalid) {
+      <mat-error>Name is required</mat-error>
+    }
+  </mat-form-field>
+  <button mat-stroked-button>Start</button>
+</form>
+<div id="images">
+  <img src="chaos-and-affection.png" alt="chaos-and-affection-crest">
+  <img src="fire-for-justice.png" alt="fire-for-justice-crest">
+  <img src="in-the-box-truth.png" alt="in-the-box-truth-crest">
+  <img src="learn-forever.png" alt="learn-forever-crest">
+</div>

@@ -1,0 +1,22 @@
+h1, p {
+    text-align: center;
+}
+
+
+form {
+    text-align: center;
+
+    button {
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+#images {
+    max-height: 30vh;
+    text-align: center;
+
+    img {
+        max-height: inherit;
+    }
+}
