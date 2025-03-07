@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Deploy
 
-`ng deploy --base-href/CapsherHouseTest`
+`ng deploy --base-href=/CapsherHouseTest/`
