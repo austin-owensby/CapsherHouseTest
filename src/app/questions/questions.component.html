@@ -5,6 +5,14 @@
     @else {
         <app-question [question]="questions[currentQuestion]"></app-question>
     }
+    <div id="button-nav">
+        @if (currentQuestion != 0) {
+            <button mat-stroked-button (click)="currentQuestion = currentQuestion - 1">Previous</button>
+        }
+        @if (currentQuestion != questions.length) {
+            <button mat-stroked-button (click)="currentQuestion = currentQuestion + 1" [disabled]="currentQuestion == questions.length - 1 && !allQuestionsAnswered()">{{currentQuestion == questions.length - 1 ? "See Results" : "Next"}}</button>
+        }
+    </div>
 
     <div id="question-nav">
         <mat-button-toggle-group aria-label="Question Navigation" [(ngModel)]="currentQuestion">

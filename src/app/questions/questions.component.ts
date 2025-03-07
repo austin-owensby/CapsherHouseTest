@@ -4,11 +4,12 @@ import { QuestionComponent } from "../question/question.component";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 import { ResultsComponent } from "../results/results.component";
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-questions',
   standalone: true,
-  imports: [QuestionComponent, MatButtonToggleModule, FormsModule, ResultsComponent],
+  imports: [QuestionComponent, MatButtonToggleModule, FormsModule, ResultsComponent, MatButtonModule],
   templateUrl: './questions.component.html',
   styleUrl: './questions.component.scss'
 })
@@ -45,7 +46,7 @@ export class QuestionsComponent {
     }
   }
 
-  readonly currentQuestion = 0;
+  currentQuestion = 0;
   
   readonly questions: Question[] = [{
     question: 'Do you want to just guarantee a result instead of getting the result of the quiz?',
