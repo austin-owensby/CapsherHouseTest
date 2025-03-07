@@ -1,0 +1,24 @@
+#results {
+    width: 300px;
+}
+
+div {
+    text-align: center;
+}
+
+#specific-results {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    img {
+        width: 100px;
+    }
+}

@@ -1,0 +1,30 @@
+<h1>Results</h1>
+
+<div>
+    @if (rigged == true) {
+        <h2>Congratulations, {{name}}! You've been "sorted"!</h2>
+    }
+    @else {
+        <h2>Congratulations, {{name}}! You've been sorted!</h2>
+    }
+    <img id="results" [src]="result + '.png'" [alt]="result + 'results'">
+</div>
+
+<div id="specific-results">
+    <div>
+        <img src="chaos-and-affection.png" alt="chaos-and-affection-crest">
+        <span>{{chaosAndAffectionCount}}</span>
+    </div>
+    <div>
+        <img src="fire-for-justice.png" alt="fire-for-justice-crest">
+        <span>{{fireForJusticeCount}}</span>
+    </div>
+    <div>
+        <img src="in-the-box-truth.png" alt="in-the-box-truth-crest">
+        <span>{{inTheBoxTruth}}</span>
+    </div>
+    <div>
+        <img src="learn-forever.png" alt="learn-forever-crest">
+        <span>{{learnForever}}</span>
+    </div>
+</div>

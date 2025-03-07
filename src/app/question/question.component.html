@@ -1,0 +1,7 @@
+<h1>Questions</h1>
+<h2><app-emoji-renderer [value]="question.question"></app-emoji-renderer></h2>
+<mat-radio-group class="answers" aria-label="Question options" [(ngModel)]="question.selectedAnswer">
+    @for(answer of question.answers; track answer.answer; let  i = $index) {
+        <mat-radio-button [value]="answer.type"><app-emoji-renderer [value]="answer.answer"></app-emoji-renderer></mat-radio-button>
+    }
+</mat-radio-group>

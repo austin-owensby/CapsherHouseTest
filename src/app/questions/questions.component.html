@@ -1,0 +1,17 @@
+<section>
+    @if (currentQuestion == questions.length) {
+        <app-results [questions]="questions"></app-results>
+    }
+    @else {
+        <app-question [question]="questions[currentQuestion]"></app-question>
+    }
+
+    <div id="question-nav">
+        <mat-button-toggle-group aria-label="Question Navigation" [(ngModel)]="currentQuestion">
+            @for(question of questions; track question.question; let  i = $index) {
+                <mat-button-toggle [value]="i">Q{{i + 1}}</mat-button-toggle>
+            }
+            <mat-button-toggle [value]="questions.length" [disabled]="!allQuestionsAnswered()">Results</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</section>

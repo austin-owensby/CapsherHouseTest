@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { Component, inject } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start',
@@ -13,10 +14,12 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class StartComponent {
   readonly name = new FormControl('', [Validators.required]);
+  private readonly router = inject(Router);
 
   onSubmit() {
     if (this.name.valid) {
-      console.log(this.name.value);
+      localStorage.setItem('name', this.name.value ?? '');
+      this.router.navigate(['questions']);
     }
   }
 }
